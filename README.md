@@ -6,9 +6,9 @@ ubuntu 20.0.4 2核4g+100gssd
 另外建议先全局限制下日志大小。这里懒得写了。
 
 1>安装docker和docker-compose
-apt-get update
-
 apt upgrade
+apt-get update
+apt install jq
 
 
 安装docker
