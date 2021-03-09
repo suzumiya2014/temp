@@ -58,21 +58,13 @@ chmod +x cashout.sh
 ./cashout.sh cashout-all 5
 
 #启动多个节点
-严格参考官方文档原话即可（以下是google翻译和原版）
-这是很容易通过增加更多的服务来运行搬运工撰写多蜜蜂节点docker-compose.yaml 要做到这一点，打开docker-compose.yaml，复制线3-58和过去的这条线58在复制的行之后，替换出现的所有bee-1带bee-2，clef-1与clef-2和调整API_ADDR，并P2P_ADDR并DEBUG_API_ADDR分别1733，1734而127.0.0.1:1735 最后，添加新配置的服务下volumes（最后几行），这样它看起来像：
-
-音量：
-  谱号-1：
-  蜂-1：
-  蜂2：
-  谱号-2：
-如果要创建两个以上的节点，只需重复上述过程，确保为蜜蜂和谱号服务保留唯一的名称并更新端口
-
-It is easy to run multiple bee nodes with docker compose by adding more services to docker-compose.yaml To do so, open docker-compose.yaml, copy lines 3-58 and past this after line 58. In the copied lines, replace all occurences of bee-1 with bee-2, clef-1 with clef-2 and adjust the API_ADDR and P2P_ADDR and DEBUG_API_ADDR to respectively 1733, 1734 and 127.0.0.1:1735 Lastly, add your newly configured services under volumes (last lines), such that it looks like:
-
-volumes:
-  clef-1:
-  bee-1:
-  bee-2:
+编辑docker-compose.yaml
+把3-58行的内容复制粘贴在58行之后。
+替换粘贴内容中所有的bee-1为bee-2
+clef-1为clef-2；
+然后修改API_ADDR、P2P_ADDR、DEBUG_API_ADDR以此为1733，1734和127.0.0.1:1735。
+最后在最下面的volumes里添加
   clef-2:
-If you want to create more than two nodes, simply repeat the process above, ensuring that you keep unique name for your bee and clef services and update the ports
+  bee-2:
+
+如果要添加更多节点，要是重复这样的工作，给新节点唯一的名称和唯一的三个端口就行。
