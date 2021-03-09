@@ -96,10 +96,17 @@ chmod +x cashout.sh
 
   clef-2:
   bee-2:
+  
 保存退出后。重启：
+
 docker-compose stop
+
 docker-compose up -d 
+
 或者单独启动新的节点
+
 docker-compose up -d clef-2
+
 docker-compose up -d bee-2
+
 如果要添加更多节点，只要重复上面的工作，给新节点唯一的名称和唯一的三个端口就行。
