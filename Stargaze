@@ -1,0 +1,6 @@
+Stargaze
+
+常用指令for chanllege 1：
+
+starsd tx distribution withdraw-rewards -h
+starsd tx staking delegate -h
