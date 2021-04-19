@@ -37,13 +37,17 @@ source ~/.profile
 git clone https://github.com/desmos-labs/desmos.git && cd desmos
 
 #此处不执行命令，因为新链还没有标注tags
+
 #git fetch --tags --force
+
 #git checkout tags/v0.15.1
 
 make install
 
 # ---- 选做配置部分开始 ---- 
+
 #添加seed
+
 nano $HOME/.desmos/config/config.toml
 
 找seeds=这行，修改
@@ -55,12 +59,15 @@ seeds = "be3db0fe5ee7f764902dbcc75126a2e082cbf00c@seed-1.morpheus.desmos.network
 persistent_peers = "1d9cc23eedb2d812d30d99ed12d5c5f21ff40c23@seed-3.morpheus.desmos.network:26656,bdd98ec74fe56146f08e886239e52373f6821ce3@51.15.113.208:26656,25490afe8d5b6bfe065f1dd8154f420f050fbb57@95.216.148.253:26656"
 
 #修改区块裁剪策略
+
 找到 ~/.desmos/config/app.toml 文件 修改pruning = "default" 为 pruning = "everything"
 
 #Reset the node:
+
 desmos unsafe-reset-all
 
 #配置后台启动
+
 运行如下命令
 
 tee /etc/systemd/system/desmos.service > /dev/null <<EOF  
@@ -105,6 +112,7 @@ rm ~/.desmos/config/genesis.json
 curl https://raw.githubusercontent.com/desmos-labs/morpheus/master/morpheus-apollo-1/genesis.json > ~/.desmos/config/genesis.json
 
 #如果没有创建过钱包需要先创建钱包，或者通过助记词导入钱包。
+
 #添加一个钱包（<key_name> 是自定义的）记录助记词，记下地址
 
 desmos keys add <key_name> --keyring-backend "os"
@@ -120,17 +128,26 @@ desmos gentx <key_name> 1000000udaric --chain-id=morpheus-apollo-1 \
     --security-contact="..." \
     --website="..."
 
-会得到一条这样的信息：Genesis transaction written to "/home/user/.desmos/config/gentx/gentx-6b1fe44615aa1ac9b0dfc637d1a33fd63de2a05e.json"
+会得到一条这样的信息：
+
+Genesis transaction written to "/home/user/.desmos/config/gentx/gentx-6b1fe44615aa1ac9b0dfc637d1a33fd63de2a05e.json"
 
 # 提交
+
 #你需要fork 代码并再本地拉到本地，cp文件到自己的仓库目录下，然后pull，再在github上提交pr
+
 git clone https://github.com/<Your GitHub username>/morpheus.git 
+  
 cd morpheus
+
 cp ~/.desmos/config/genesis.json morpheus-apollo-1/ 
+
 cp /home/user/.desmos/config/gentx/gentx-<你前面获得的那条json>.json morpheus-apollo-1/gentxs/
   
 git add . 
+
 git commit -m "<Your commit message>"
+  
 git push
   
 #最后进行pr即可。然后需要等待主网启动
