@@ -155,10 +155,10 @@ fi
 function Install_Main() {
 if [ ! -f $passPath ]; then
 date "+【%Y-%m-%d %H:%M:%S】  /root/bee-pass.txt" 2>&1 | tee -a /root/run.log
-echo "Введите пароль для ноды (он будет хранится тут $passPath):"
+echo "请输入节点密码 (它将存储在这里 $passPath):"
 read  n
 echo  $n > $passPath;
-date "+【%Y-%m-%d %H:%M:%S】 输入节点密码: " && cat $passPath  2>&1 | tee -a /root/run.log
+date "+【%Y-%m-%d %H:%M:%S】 输入的节点密码是: " && cat $passPath  2>&1 | tee -a /root/run.log
 fi
 
 echo 'Установка пакетов...'; sleep 2
