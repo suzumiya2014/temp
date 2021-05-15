@@ -174,7 +174,7 @@ curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TA
 echo '即将安装 Bee Clef..'; sleep 2
 
 date "+【%Y-%m-%d %H:%M:%S】 安装 Bee Clef" 2>&1 | tee -a /root/run.log
-wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.7/bee-clef_0.4.7_amd64.deb && dpkg -i bee-clef_0.4.7_amd64.deb
+wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.9/bee-clef_0.4.9_amd64.deb && dpkg -i bee-clef_0.4.9_amd64.deb
 
 wget https://github.com/doristeo/SwarmBeeBzzz/raw/main/local-dash.sh
 chmod +x local-dash.sh
@@ -198,7 +198,7 @@ sleep 10
 address="0x`cat ~/.bee/keys/swarm.key | jq '.address'|sed 's/\"//g'`" && echo "您的节点钱包:" && echo ${address}
 echo "
 +----------------------------------------------------------------------"
-echo -e " 接下来，您需要用测试令牌充值您的钱包余额. 复制链接 https://discord.gg/f697tZaZjk , 然后去聊天频道 #faucet-request 输入 \e[42msprinkle ${address}\e[0m"
+echo -e " 接下来，您需要用测试令牌充值您的钱包余额. 复制链接 https://discord.gg/4EjCaQjN , 然后去聊天频道 #faucet-request 输入 \e[42msprinkle ${address}\e[0m"
 echo "
 +----------------------------------------------------------------------"
 echo ''
