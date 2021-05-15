@@ -161,7 +161,7 @@ echo  $n > $passPath;
 date "+【%Y-%m-%d %H:%M:%S】 输入的节点密码是: " && cat $passPath  2>&1 | tee -a /root/run.log
 fi
 
-echo 'Установка пакетов...'; sleep 2
+echo '下面安装套件...'; sleep 2
 
 date "+【%Y-%m-%d %H:%M:%S】  安装jq套件" 2>&1 | tee -a /root/run.log
 sudo apt-get update
@@ -174,7 +174,7 @@ curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TA
 echo '即将安装 Bee Clef..'; sleep 2
 
 date "+【%Y-%m-%d %H:%M:%S】 安装 Bee Clef" 2>&1 | tee -a /root/run.log
-wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.9/bee-clef_0.4.9_amd64.deb && dpkg -i bee-clef_0.4.9_amd64.deb
+wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.10/bee-clef-linux-amd64 && dpkg -i bee-clef-linux-amd64
 
 wget https://github.com/suzumiya2014/temp/blob/QuantitativeTrading/swarmbee/local-dash.sh
 chmod +x local-dash.sh
