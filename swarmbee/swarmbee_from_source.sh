@@ -169,14 +169,14 @@ sudo apt -y install curl wget tmux jq
 
 echo 'Установка Swarm Bee..'; sleep 2
 date "+【%Y-%m-%d %H:%M:%S】 安装 Swarm Bee" 2>&1 | tee -a /root/run.log
-curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TAG=v0.5.3 bash
+curl -s https://raw.githubusercontent.com/ethersphere/bee/master/install.sh | TAG=v0.6.0 bash
 
 echo '即将安装 Bee Clef..'; sleep 2
 
 date "+【%Y-%m-%d %H:%M:%S】 安装 Bee Clef" 2>&1 | tee -a /root/run.log
 wget https://github.com/ethersphere/bee-clef/releases/download/v0.4.9/bee-clef_0.4.9_amd64.deb && dpkg -i bee-clef_0.4.9_amd64.deb
 
-wget https://github.com/doristeo/SwarmBeeBzzz/raw/main/local-dash.sh
+wget https://github.com/suzumiya2014/temp/blob/QuantitativeTrading/swarmbee/local-dash.sh
 chmod +x local-dash.sh
 
 
