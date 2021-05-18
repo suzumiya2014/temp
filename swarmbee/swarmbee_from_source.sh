@@ -198,7 +198,7 @@ sleep 10
 address="0x`cat ~/.bee/keys/swarm.key | jq '.address'|sed 's/\"//g'`" && echo "您的节点钱包:" && echo ${address}
 echo "
 +----------------------------------------------------------------------"
-echo -e " 接下来，您需要用测试令牌充值您的钱包余额. 复制链接 https://discord.gg/4EjCaQjN , 然后去聊天频道 #faucet-request 输入 \e[42msprinkle ${address}\e[0m"
+echo -e " 接下来，您需要用测试令牌充值您的钱包余额. 复制链接 https://discord.gg/4EjCaQjN , 然后去聊天频道 #faucet 输入 \e[42mfaucet sprinkle ${address}\e[0m"
 echo "
 +----------------------------------------------------------------------"
 echo ''
